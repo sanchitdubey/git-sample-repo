@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>
+	Iterate throught nested objects.
+</h1>
+<script type="text/javascript">
+	
+	Obj = {
+  		a : {
+    		b : 5,
+    		c : {
+				d: 55
+    		}
+		}
+	}
+
+
+const iterateObj = function(obj){
+//alert(1);
+	for(key in obj){
+		if(obj.hasOwnProperty(key)){
+			console.log(key);
+			iterateObj(obj[key]);
+		}
+		console.log(key);
+    
+	}
+}
+iterateObj(Obj);
+
+
+</script>
+</body>
+</html>

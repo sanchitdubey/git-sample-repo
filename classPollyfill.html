@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Class Pollyfill...</h1>
+<script type="text/javascript">
+	let Car = (function(){
+		let _car = function(color){
+			this.color = color;
+		}
+		
+		return _car;
+	})()
+
+	console.log(Car);
+</script>
+</body>
+</html>

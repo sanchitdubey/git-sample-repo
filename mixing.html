@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Mixins...</h1>
+<script type="text/javascript">
+	const Fun1 = function(obj){
+		let privatVar = "Private Value";
+		return Object.assign({}, obj, {
+			fun1Prop1(){
+				console.log(privatVar);
+				return this;
+			},
+			fun1Prop2(){
+				console.log(privatVar);
+			}
+		});
+	}
+
+	const Fun2 = function(obj){
+		return Object.assign({}, obj, {
+			fun2Prop1(){
+				console.log('fun2Prop1');
+			},
+			fun2Prop2(){
+				console.log('fun2Prop1');
+			}
+		});
+	}
+	let fun1 = Fun1();
+	console.log(fun1);
+	let fun2 = Fun2();
+	console.log(fun2);
+
+	console.log("After Mixins")
+	let fun3 = Fun1(Fun2());
+
+
+	console.log("Mixins With Chaining")
+	console.log(fun3.fun1Prop1().fun1Prop2());
+</script>
+</body>
+</html>

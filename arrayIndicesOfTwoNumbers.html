@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Question : Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
+
+You may assume that each input would have exactly one solution, and you may not use the same element twice.
+
+You can return the answer in any order. 
+<a href="https://leetcode.com/problems/two-sum/">Source</a>
+</h1>
+<script type="text/javascript">
+	
+	const nums = [45, -8, 10, 1, 4, 6]; 
+	const target = 16;
+	const twoSum = function(num, target){
+		const compObj= {};
+		for(var i = 0; i <=nums.length - 1; i++){
+			if (compObj[num[i]] >= 0) {
+				console.log([compObj[num[i]],i]);
+				return [compObj[num[i]],i]
+			}
+				compObj[target - num[i]] = i;
+		}
+	}
+
+	twoSum(nums, target);
+	console.log(twoSum(nums,target));
+
+
+</script>
+</body>
+</html>

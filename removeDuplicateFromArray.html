@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>
+	JavaScript - Functions - Return
+</h1>
+<script type="text/javascript">
+	var arr1 = [1,5,15,25,25,55];
+
+	var newArr1 = [...new Set(arr1)];
+	console.log(newArr1);
+
+	const a = function(x){
+		this.x = x;
+	}
+
+	const b = function(x,y){
+		this.y = y;
+		this.getY = function(){
+			console.log(this.y);
+		}
+		this.getX = function(){
+			console.log(a.call(this,x));
+		}
+	}
+
+	const newB = new b('X','Y');
+
+	newB.getX();
+	newB.getY();
+</script>
+</body>
+</html>

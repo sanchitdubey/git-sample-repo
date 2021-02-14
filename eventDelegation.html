@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Event Delegation...</h1>
+<div id="form">
+	<form>
+		<input type="text" name="name" data-uppercase />
+		<input type="text" name="address" />
+		<input type="text" name="mobile" />
+	</form>
+</div>
+<script type="text/javascript">
+	document.querySelector('#form').addEventListener('keyup', (e) => {
+	  console.log(e.target.dataset);
+
+		if (e.target.dataset.uppercase != undefined) {
+			e.target.value = e.target.value.toUpperCase();
+		}
+	})
+</script>
+</body>
+</html>

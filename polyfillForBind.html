@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Pollyfill for Bind...</h1>
+<script type="text/javascript">
+	let name = {prop1 : 'Sanchit',prop2 : 'Dubey'};
+	var obj = {prop1:'value1', prop2:'value2'}
+	let printName = function(argument3, argument4){
+		console.log(this.prop1 + "  : " + this.prop2 + " : " + argument3 + argument4);
+	}
+
+	//printName();
+	var printName2 = printName.bind(name, 'param3');
+	printName2()
+	console.log(printName2());
+
+	Function.prototype.sanchitBind = function(...args){
+		var obj = this;
+		var params = args.slice(1);
+		return function(...args2){
+			obj.apply(args[0], [...params, ...args2]);
+		}
+	}
+	var printName3 = printName.sanchitBind(obj, 'Param 3');
+	printName3('Param 4');
+</script>
+</body>
+</html>

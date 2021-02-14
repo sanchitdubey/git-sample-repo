@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<input type="text" name="search" onkeyup="betterFunction();">
+<script type="text/javascript">
+	let counter = 1;
+	const getData = function(){
+		console.log('fetching  data...');
+	}
+
+	const debouncing = function(fn,delay){
+		var timer;
+		return function(){
+			let context = this;
+			let arg = arguments;
+			clearTimeout(timer); 
+			timer = setTimeout(function(){
+				fn.apply(context, arg);
+			},delay)
+		}
+	}
+	// function betterFunction(){
+	// 	debouncing(getData,300);
+	// }
+	const betterFunction = debouncing(getData, 300);
+
+
+
+
+</script>
+</body>
+</html>

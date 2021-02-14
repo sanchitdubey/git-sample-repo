@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>
+	Javascript Iterators tutorial. Array is a Iterable Object it's prototype has a method Symbol for itarating. Object does not have this method. Symbol method return only unique value;
+</h1>
+<script type="text/javascript">
+	
+	let mySet = new Set([1,2,3,45,5555]);
+
+	console.log(mySet);
+
+	for(let val of mySet){
+		console.log(val);
+	}
+
+	let obj = {
+		prop1: 'Value Obe',
+		prop2: 2,
+		prop3: [2,4,5,6,7],
+		prop4: {
+			'firstName':'Bis...',
+			'lastName':'Rah.....'
+		},
+		prop5: 'Value 5'
+	}
+
+	console.log(obj);
+	for(let key in obj){
+		console.log(key);
+		console.log(obj[key]);
+	}
+
+	console.log('iterator Next=====================');
+
+	let newArray = [1,2,5,4,3];
+	let iterator1 = newArray[Symbol.iterator]();
+	console.log(iterator1)
+	console.log(iterator1.next());
+	console.log(iterator1.next());
+	console.log(iterator1.next());
+	console.log(iterator1.next());
+	console.log(iterator1.next());
+	console.log(iterator1.next());
+</script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Closure...</h1>
+<script type="text/javascript">
+	// A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment). In other words, a closure gives you access to an outer function’s scope from an inner function. In JavaScript, closures are created every time a function is created, at function creation time.
+	// Example one
+	function outer(){
+	   var i =1;
+	   for(var i = 1; i <=10; i++){
+		   function forClosure(x){
+				   setTimeout(function(){
+				   	console.log(x)
+			   	}, 1000)
+		   }
+		   forClosure(i)
+	   }
+	}
+	outer();
+	
+
+
+	// Example Two
+	console.log('=======Closure Example Two==================')
+	function x(){
+		var i=111111;
+		function y(){
+			console.log(i)
+		}
+		y();
+	}
+	x();
+
+
+	// Example Three
+	console.log('=======Closure Example Three==================')
+
+	var counter = (function(){
+		var privateCounter = 0;
+
+		function changeValue(val){
+			privateCounter += val;
+		}
+
+		return {
+			increment : function(){
+				changeValue(1);
+			},
+
+			decrement : function(){
+				changeValue(-1);
+			},
+
+			value : function(){
+				return privateCounter;
+			}
+		}
+	})();
+
+	console.log(counter.increment());
+	console.log(counter.value());
+	console.log(counter.increment());
+	console.log(counter.value());
+	console.log(counter.decrement());
+	console.log(counter.value());
+	console.log(counter.increment());
+	console.log(counter.value());
+	console.log(counter.increment());
+	
+</script>
+</body>
+</html>

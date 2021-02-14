@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Bind Example</h1>
+<script type="text/javascript">
+	let myObj = {
+		asyncGet(cb){
+			cb()
+		},
+		parse(){
+			console.log('parse called');
+		},
+		render(){
+			debugger;
+			this.asyncGet(function(){
+				this.parse();
+			}.bind(this))
+		}
+	}
+
+	console.log(myObj);
+	console.log(myObj.render());
+</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>
+	The rest parameter syntax allows a function to accept an indefinite number of arguments as an array, providing a way to represent.
+</h1>
+<script type="text/javascript">
+	// Rest parameter 
+	var arr1 = [1,5,72];
+	var x = 'sanchit';
+	var b = 'niti';
+	var c = 'nonu';
+	var obj1 = {
+		prop1:'value one',
+		prop1:'value two',
+		prop1:'value three'
+	}
+	function testRestParameter(...n){
+		//console.log(n);
+	}
+
+	testRestParameter(x,b,c,arr1,obj1);
+	var mixed = x + b + c + arr1;
+	//console.log(testRestParameter(mixed));
+
+	// Spread operator
+	var one = [2,4,4,6,7,5,4];
+	var two = [5,4,4,12,14,5];
+	var three = [one , two];
+
+	console.log(three);
+	//console.log(three[1]);
+
+	var spreadUse = [one + two];
+	console.log(spreadUse);
+	
+</script>
+</body>
+</html>

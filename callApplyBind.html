@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Call, Apply and Bind is used to borrow function from other object</h1>
+	<div>As in class we use super to inherrit property from its parent class. We can to same thing using Call</div>
+<script type="text/javascript">
+	var callFun = function(...arg){
+		//console.log(arguments)
+		console.log([].slice.call(arguments));
+
+	}
+	//console.log(callFun('one',5,3,3));
+
+	var mammal = function(legs){
+		this.legs = legs;
+	}
+
+	var cat = function(legs, isDomisticated){
+		mammal.call(this, legs);
+		this.isDomisticated = isDomisticated;
+	}
+
+	var lion = new cat(4, false);
+	//console.log(lion);
+
+
+	let numArray = [1,2,3,4,5,6];
+
+	const minVal = function(){
+		console.log(Math.min(arguments));
+	}
+
+
+   
+	console.log(minVal(numArray));
+
+</script>
+</body>
+</html>

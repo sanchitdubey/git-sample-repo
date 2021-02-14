@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Thinking Recursively...</h1>
+<div id="form">
+	
+<script type="text/javascript">
+	user = {
+		name : 'Sanchit',
+		address : {
+			personal : {
+				city: 'Ghaziabad',
+				area : 'Sahibabad'
+			},
+			office : {
+				city : 'Noida',
+				area : 'Sahibabad'
+			}
+		},
+	}
+
+	// to loop through object
+	// find out if it is type of object
+	// if object then get the name of that object
+	// add using _objName to the parent
+	// if not object then assign the value to the object
+	//
+var finalObj = {};
+function goThroughObj(obj, parent){
+	for(const property in obj) {
+	    console.log(typeof property);  
+	    if(typeof obj[property] === 'object'){
+	    	console.log(obj[property]);
+	    	goThroughObj(obj[property], parent+"_"+property);
+	    } else {
+	    	finalObj[parent+"_"+property] = obj[property]
+	    }
+	}
+	console.log(finalObj);
+}
+
+goThroughObj(user, 'user');
+</script>
+</body>
+</html>

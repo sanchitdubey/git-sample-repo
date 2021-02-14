@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Function Curying...</h1>
+<script type="text/javascript">
+	//Function Curying... using simple function
+	function multiply(x, y) {
+		console.log(x*y);
+	}
+
+	var multiplication =  multiply.bind(this,5);
+	multiplication(5);
+
+	//Function Curying... using closure
+
+	function multi(x){
+		return function(y){
+			console.log(x*y);
+		}
+	}
+
+	var multiplyByClosure = new multi(12);
+	multiplyByClosure(6)
+
+
+</script>
+</body>
+</html>

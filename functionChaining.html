@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Function Chaining...</h1>
+<script type="text/javascript">
+	const fun1 = function(obj){
+		console.log(this);
+		var j = 0;
+
+		var add = function(i){
+			j += i;
+			console.log(j);
+			console.log(this);
+			return this;
+		}
+
+		var subtract = function(i){
+			j -= i;
+			console.log(j);
+			console.log(this);
+			return this;
+		}
+
+		return {add:add, subtract:subtract}
+	}
+
+	//fun1();
+	var f1 = fun1();
+	console.log(f1.add(5).subtract(2));
+</script>
+</body>
+</html>

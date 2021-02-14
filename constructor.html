@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Constructor Function...</h1>
+<script type="text/javascript">
+	var car = function(color){
+		this.color = color;
+	}
+
+	car('Red');
+	console.log(car('Red'));
+	var Car = function(color){
+		this.color = color;
+	}
+	Car('Red');
+	console.log(Car('Red'));
+
+	var carConstructor = new Car('Red');
+	console.log(carConstructor);
+</script>
+</body>
+</html>

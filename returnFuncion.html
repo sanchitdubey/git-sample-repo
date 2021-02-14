@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>
+	JavaScript - Functions - Return
+</h1>
+<script type="text/javascript">
+	function multiply(n1,n2){
+		return n1 * n2;
+	}
+	
+	function sumOf(...num1){
+		return num1[0] + num1[1]
+	}
+
+	var num1 = 5;
+	var num2 = 55;
+
+	var sum 		= sumOf(num1, num2);
+	var multiply 	= multiply(prompt('Enter a number'), sum);
+	console.log(multiply);
+
+	function magic(){
+		return function(x){
+			return x*x*x;
+		}
+	}
+
+	var m1 = magic();
+	console.log(m1);
+	var returnValue = console.log(m1(5));
+	console.log(returnValue);
+
+</script>
+</body>
+</html>
